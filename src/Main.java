@@ -1,11 +1,8 @@
-import java.util.Scanner;
+import app.Application;
 
 public class Main {
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    Calculator calculator = new Calculator();
-    while (calculator.processInput(scanner)){
-    }
-    scanner.close();
+    Application app = new Application();
+    app.run();
   }
 }
