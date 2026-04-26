@@ -11,14 +11,10 @@ public class Expression {
     this.operator = parsedInput[1];
   }
 
-  public double getFirstNumber() {
-    return firstNumber;
-  }
-
+  public double getFirstNumber() {return firstNumber;}
   public double getSecondNumber() {
     return secondNumber;
   }
-
   public String getOperator() {
     return operator;
   }

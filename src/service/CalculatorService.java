@@ -3,7 +3,7 @@ package service;
 import model.Expression;
 
 public class CalculatorService {
-  public double calculate(Expression expression) {
+  public static double calculate(Expression expression) {
     double result;
     double firstNumber = expression.getFirstNumber();
     double secondNumber = expression.getSecondNumber();

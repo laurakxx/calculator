@@ -12,11 +12,11 @@ public class History {
   public List<String> getHistoryList(){
     return new ArrayList<>(historyList);
   }
-  public Double getLastResult() {
+  public String getLastResult() {
     if(historyList.size()==0){
       return null;
     }
-    return lastResult;
+    return String.valueOf(lastResult);
   }
   public void clearHistory() {
     historyList.clear();

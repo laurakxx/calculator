@@ -1,13 +1,14 @@
 package ui;
 
-import model.Expression;
 
 import java.util.List;
 
 public class ConsolePrinter {
-  public void printResult(double result) {
+  public void printResult(String result) {
     System.out.println("Результат: " + result);
-    //System.out.println(firstNumber + " " + operator + " " + secondNumber + " = " + result);
+  }
+  public void printResultByNumbers(double firstNumber, String operator, double secondNumber, double result) {
+    System.out.println(firstNumber + " " + operator + " " + secondNumber + " = " + result);
   }
 
   public void printError(String error) {
@@ -24,7 +25,7 @@ public class ConsolePrinter {
       System.out.println(i+1+") "+ historyList.get(i));
     }
   }
-  public void printLast(Double result) {
+  public void printLast(String result) {
     if(result==null) {
       System.out.println("История пуста");
       return;
