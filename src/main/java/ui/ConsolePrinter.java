@@ -1,6 +1,4 @@
 package ui;
-
-
 import java.util.List;
 
 public class ConsolePrinter {
