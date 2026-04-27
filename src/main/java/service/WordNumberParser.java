@@ -47,7 +47,7 @@ public class WordNumberParser {
   );
 
 
-  public String[] wordsToNumber(String str[], int index) {
+  public String[] wordsToNumber(String[] str, int index) {
     String firstNumber = recognizeWord(str, 0, index);
     String secondNumber = recognizeWord(str, index+1, str.length);
     if(firstNumber==null || secondNumber==null) {
@@ -78,10 +78,11 @@ public class WordNumberParser {
     if(abs(tens)==10) {
       tens=number%100;
       units = 0;
-      System.out.println(tens);
     }
 
-    String h, t, u;
+    String h;
+    String t;
+    String u;
     String result="";
     if(hundreds<0||tens<0||units<0) { //если отрицательный результат
       result += "минус ";
@@ -90,26 +91,26 @@ public class WordNumberParser {
       units = -units;
     }
     if(hundreds!=0) {
-      h = getValue(NUMBERS, hundreds);
+      h = getValue(hundreds);
       if(h!=null) result+=h +" ";
     }
     if(tens!=0) {
-      t = getValue(NUMBERS, tens);
+      t = getValue(tens);
       if(t!=null) result+=t+" ";
 
     }
     if(units!=0) {
-      u = getValue(NUMBERS, units);
+      u = getValue(units);
       if(u!=null) result+=u;
     }
     if((hundreds+tens+units)==0) {
-      u = getValue(NUMBERS, units);
+      u = getValue(units);
       if(u!=null) result+=u;
     }
     return result;
   }
-  private String getValue(Map<String, Integer> map, Integer value) {
-    for(Map.Entry<String, Integer> entry: map.entrySet()) {
+  private String getValue(Integer value) {
+    for(Map.Entry<String, Integer> entry: WordNumberParser.NUMBERS.entrySet()) {
       if(entry.getValue().equals(value)) {
         return entry.getKey();
       }
